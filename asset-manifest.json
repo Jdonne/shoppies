@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/%7Bshoppies%7D/static/css/main.ea6af790.chunk.css",
-    "main.js": "/%7Bshoppies%7D/static/js/main.6f23ae12.chunk.js",
-    "main.js.map": "/%7Bshoppies%7D/static/js/main.6f23ae12.chunk.js.map",
-    "runtime-main.js": "/%7Bshoppies%7D/static/js/runtime-main.4ce963ff.js",
-    "runtime-main.js.map": "/%7Bshoppies%7D/static/js/runtime-main.4ce963ff.js.map",
-    "static/js/2.692e8f5b.chunk.js": "/%7Bshoppies%7D/static/js/2.692e8f5b.chunk.js",
-    "static/js/2.692e8f5b.chunk.js.map": "/%7Bshoppies%7D/static/js/2.692e8f5b.chunk.js.map",
-    "static/js/3.c42d4f7c.chunk.js": "/%7Bshoppies%7D/static/js/3.c42d4f7c.chunk.js",
-    "static/js/3.c42d4f7c.chunk.js.map": "/%7Bshoppies%7D/static/js/3.c42d4f7c.chunk.js.map",
-    "index.html": "/%7Bshoppies%7D/index.html",
-    "static/css/main.ea6af790.chunk.css.map": "/%7Bshoppies%7D/static/css/main.ea6af790.chunk.css.map",
-    "static/js/2.692e8f5b.chunk.js.LICENSE.txt": "/%7Bshoppies%7D/static/js/2.692e8f5b.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/%7Bshoppies%7D/static/media/submitted.f4482dca.jpg"
+    "main.css": "/shoppies/static/css/main.4ef0d957.chunk.css",
+    "main.js": "/shoppies/static/js/main.6f23ae12.chunk.js",
+    "main.js.map": "/shoppies/static/js/main.6f23ae12.chunk.js.map",
+    "runtime-main.js": "/shoppies/static/js/runtime-main.22804f4a.js",
+    "runtime-main.js.map": "/shoppies/static/js/runtime-main.22804f4a.js.map",
+    "static/js/2.692e8f5b.chunk.js": "/shoppies/static/js/2.692e8f5b.chunk.js",
+    "static/js/2.692e8f5b.chunk.js.map": "/shoppies/static/js/2.692e8f5b.chunk.js.map",
+    "static/js/3.c42d4f7c.chunk.js": "/shoppies/static/js/3.c42d4f7c.chunk.js",
+    "static/js/3.c42d4f7c.chunk.js.map": "/shoppies/static/js/3.c42d4f7c.chunk.js.map",
+    "index.html": "/shoppies/index.html",
+    "static/css/main.4ef0d957.chunk.css.map": "/shoppies/static/css/main.4ef0d957.chunk.css.map",
+    "static/js/2.692e8f5b.chunk.js.LICENSE.txt": "/shoppies/static/js/2.692e8f5b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/shoppies/static/media/submitted.f4482dca.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ce963ff.js",
+    "static/js/runtime-main.22804f4a.js",
     "static/js/2.692e8f5b.chunk.js",
-    "static/css/main.ea6af790.chunk.css",
+    "static/css/main.4ef0d957.chunk.css",
     "static/js/main.6f23ae12.chunk.js"
   ]
 }
