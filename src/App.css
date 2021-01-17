@@ -5,6 +5,9 @@
 .title {
   font-family: "Fraunces", serif;
 }
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
 
 .clicked {
   display: none !important;
@@ -20,7 +23,7 @@
 .submitted {
   z-index: 2;
   position: absolute;
-  padding: 50px 70px;
+  padding: 50px 80px;
   top: 20%;
   background-image: url("./components/imgs/submitted.jpg");
 }
@@ -54,16 +57,14 @@ h5 {
   -webkit-text-stroke: 0.2px; /*  width and color */
 
   font-family: sans;
-  color: rgb(255, 88, 37);
+  color: green;
 }
 h1 {
   -webkit-text-stroke: 0.5px black; /*  width and color */
 
   font-family: sans;
 }
-.nomLinks {
-  color: rgb(228, 92, 43);
-}
+
 .nomLinks:hover {
   color: rgb(240, 137, 53);
 }

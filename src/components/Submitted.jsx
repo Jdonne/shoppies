@@ -1,15 +1,15 @@
 const Submitted = (props) => {
   return (
     <div className={props.submit + " border-2 border  rounded border-dark"}>
-      <h1 className="text-warning">Here Are Your Nominees:</h1>
+      <h1 className="text-warning roboto">Here Are Your Nominees:</h1>
       {props.nomList.map((movie, index) => (
-        <div className="m-2">
+        <div className="m-2 roboto">
           {" "}
           <a
             target="_blank"
             rel="noreferrer"
             href={"https://www.imdb.com/title/" + movie.imdbID}
-            className="link-danger h5 ">
+            className="link-danger  h5 ">
             {movie.Title + " (" + movie.Year + ")"}
           </a>
         </div>

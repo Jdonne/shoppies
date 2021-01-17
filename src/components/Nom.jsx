@@ -14,7 +14,7 @@ const Nom = (props) => {
           target="_blank"
           rel="noreferrer"
           href={"https://www.imdb.com/title/" + props.imdb}
-          className="nomLinks">
+          className="link-danger">
           {props.title + " (" + props.year + ")"}
         </a>
       </div>

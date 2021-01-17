@@ -105,8 +105,12 @@ const App = () => {
       <h5 className="mt-2 title ">Enter Movie Title</h5>
 
       <div className="row justify-content-center  nomArea  mt-4 mb-3">
-        <div className="col-lg-5 border border-2 border-muted  rounded bg-dark mx-3  ">
-          <h4 className="mx-2 mt-4 text-light">Movies:</h4>
+        <div
+          className={
+            hideNom +
+            " col-lg-5 border border-2 border-muted  rounded bg-dark mx-3  "
+          }>
+          <h4 className="mx-2 roboto mt-4 text-light">Movies:</h4>
           <div className="mb-4">
             {movies.map((movie, index) => (
               <Card
@@ -127,10 +131,10 @@ const App = () => {
             hideNom +
             " col-lg-5 border border-2 rounded border-muted mx-3 nomSection   "
           }>
-          <h4 className="mx-2 mt-4">Nominations:</h4>
+          <h4 className="mx-2 mt-4 roboto">Nominations:</h4>
           <div className="mb-4">
             <div className={over}>
-              <h5 className="m-2 ">You've chosen 5 Nominations</h5>{" "}
+              <h5 className="m-2 roboto">You've chosen 5 Nominations</h5>{" "}
               <div className="d-flex">
                 <button
                   className="btn-sm btn btn-danger resetBtn m-2"
