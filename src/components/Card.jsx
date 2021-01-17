@@ -9,14 +9,15 @@ const Card = (props) => {
         onClick={props.nomBtn}
         title={props.title}
         // onDoubleClick={handleToggle}
-        className={" btn btn-danger mr-2"}>
-        nominate
+        className={" btn btn-warning mr-2"}>
+        Nominate
       </button>
-      <div>
+      <div className="mx-2">
         <a
           target="_blank"
           rel="noreferrer"
-          href={"https://www.imdb.com/title/" + props.imdb}>
+          href={"https://www.imdb.com/title/" + props.imdb}
+          className="link-info">
           {props.title + " (" + props.year + ")"}
         </a>
       </div>

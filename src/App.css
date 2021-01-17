@@ -1,15 +1,72 @@
 .App {
   text-align: center;
 }
+/* title font */
+.title {
+  font-family: "Fraunces", serif;
+}
 
 .clicked {
   display: none !important;
 }
 
 .notOver {
-  visibility: hidden;
+  display: none !important;
 }
 
 .notSubbed {
   display: none !important;
+}
+.submitted {
+  z-index: 2;
+  position: absolute;
+  padding: 50px 70px;
+  top: 20%;
+  background-image: url("./components/imgs/submitted.jpg");
+}
+.section {
+  width: 45%;
+}
+.nomArea {
+  width: 70%;
+  min-height: 600px;
+}
+.hideNom {
+  display: none;
+}
+
+.resetBtn {
+  padding: 0px 10px;
+}
+
+.mainApp {
+  background-image: url("./components/imgs/background.jpg");
+  min-height: 100vh !important;
+}
+h4 {
+  -webkit-text-stroke: 0.2px black; /*  width and color */
+
+  font-family: sans;
+  color: rgb(0, 0, 0);
+}
+h5 {
+  -webkit-text-stroke: 0.2px; /*  width and color */
+
+  font-family: sans;
+  color: rgb(255, 88, 37);
+}
+h1 {
+  -webkit-text-stroke: 0.5px black; /*  width and color */
+
+  font-family: sans;
+}
+.nomLinks {
+  color: rgb(228, 92, 43);
+}
+.nomLinks:hover {
+  color: rgb(240, 137, 53);
+}
+
+.nomSection {
+  background-color: rgb(194, 192, 192);
 }

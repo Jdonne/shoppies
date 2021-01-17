@@ -3,23 +3,6 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Nom from "./components/Nom";
 import Submitted from "./components/Submitted";
-// function searchArr(nomArr, movieArr) {
-//   for (var i = 0; i < movieArr.length; i++) {
-//     for (let k = 0; k < nomArr.length; k++) {
-//       if (nomArr[k].imdbID === movieArr[i]) {
-//         let movieIndex = movie.findIndex((obj) => obj.Title == e.target.title);
-//       }
-//     }
-//   }
-// }
-
-// function searchArr(nameKey, myArray) {
-//   for (var i = 0; i < myArray.length; i++) {
-//     if (myArray[i].Title === nameKey) {
-//       return myArray[i];
-//     }
-//   }
-// }
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -27,6 +10,7 @@ const App = () => {
   const [nomList, setNomList] = useState([]);
   const [over, setOver] = useState("notOver");
   const [submit, setSubmit] = useState("notSubbed");
+  const [hideNom, setHideNom] = useState("notHidden");
 
   let nomTemp = nomList.slice();
   let searchVar = "";
@@ -38,37 +22,36 @@ const App = () => {
     setSearch(searchVar);
     console.log();
   };
-
+  // nomination button
   const handleNomBtn = (e) => {
     if (nomList.length < 5) {
       nomTemp.push(movies[e.target.id]);
       setNomList(nomTemp);
     }
-    // start off here, search for same title to remove? use useeffect?
   };
-
+  // remove nomination from list
   const handleRemove = (e) => {
-    console.log(e.target.title);
     let foundIndex = nomTemp.findIndex((obj) => obj.Title == e.target.title);
-    console.log(foundIndex);
     nomTemp.splice(foundIndex, 1);
-    // console.log(nomTemp.splice(e.target.id));
     setNomList(nomTemp);
-    // setToggle("");
   };
 
+  // handle submit classes/states
   const handleSubmit = () => {
     setSubmit("submitted");
+    setHideNom("hideNom");
   };
 
+  // resets states to initial
   const handleReset = () => {
     setSearch("");
     setMovie([]);
     setNomList([]);
     setOver("notOver");
     setSubmit("notSubbed");
+    setHideNom("notHidden");
   };
-  // fetches api on search state changes
+  // fetches api on search state changes and nomlist change (remove button)
   useEffect(() => {
     async function apiFetch() {
       try {
@@ -76,11 +59,8 @@ const App = () => {
           "http://www.omdbapi.com/?apikey=2be7a6b9&s=" + search
         );
         movieData = await movieAPI.json();
-        // console.log(weatherData);
-        console.log(movieData);
         if (movieData.Response !== "False") {
           setMovie((state) => movieData.Search);
-          console.log(movies);
         }
       } catch {
         console.log("error");
@@ -90,20 +70,16 @@ const App = () => {
       apiFetch();
     }
   }, [search, nomList]);
-  //
+  // matches nom list with movie list to remove from selection on render
   useEffect(() => {
     for (var i = 0; i < movies.length; i++) {
       for (let k = 0; k < nomTemp.length; k++) {
-        console.log(nomTemp, movies);
         if (nomTemp[k].imdbID === movies[i].imdbID) {
-          console.log(nomTemp, movies);
           let movieIndex = movies.findIndex(
             (obj) => obj.imdbID == nomTemp[k].imdbID
           );
-          console.log(movieIndex);
           let removed = movies.slice();
           removed.splice(movieIndex, 1);
-          console.log(removed);
           setMovie((state) => removed);
           return;
         }
@@ -117,52 +93,72 @@ const App = () => {
   });
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center  mainApp  ">
+      <h1 className="title my-2">The Shoppies</h1>
       <input
+        placeholder="search"
+        className="mt-1 form-control w-50"
         type="text"
         id="search"
         value={search}
         onChange={handleSearchChange}></input>
-      <div>Enter Movie Title</div>
+      <h5 className="mt-2 title ">Enter Movie Title</h5>
 
-      {movies.map((movie, index) => (
-        <Card
-          nomBtn={handleNomBtn}
-          key={index}
-          index={index}
-          title={movie.Title}
-          year={movie.Year}
-          imdb={movie.imdbID}
-          // toggle={toggleBtn}
-        />
-      ))}
-      <div className={over + " d-flex"}>
-        <h3 className="m-2">You've chosen 5 Nominations</h3>{" "}
-        <button className="btn btn-secondary m-2" onClick={handleReset}>
-          Reset
-        </button>
-        <button className="btn btn-success m-2" onClick={handleSubmit}>
-          Submit
-        </button>
+      <div className="row justify-content-center  nomArea  mt-4 mb-3">
+        <div className="col-lg-5 border border-2 border-muted  rounded bg-dark mx-3  ">
+          <h4 className="mx-2 mt-4 text-light">Movies:</h4>
+          <div className="mb-4">
+            {movies.map((movie, index) => (
+              <Card
+                nomBtn={handleNomBtn}
+                key={index}
+                index={index}
+                title={movie.Title}
+                year={movie.Year}
+                imdb={movie.imdbID}
+                // toggle={toggleBtn}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={
+            hideNom +
+            " col-lg-5 border border-2 rounded border-muted mx-3 nomSection   "
+          }>
+          <h4 className="mx-2 mt-4">Nominations:</h4>
+          <div className="mb-4">
+            <div className={over}>
+              <h5 className="m-2 ">You've chosen 5 Nominations</h5>{" "}
+              <div className="d-flex">
+                <button
+                  className="btn-sm btn btn-danger resetBtn m-2"
+                  onClick={handleReset}>
+                  Reset
+                </button>
+                <button
+                  className="btn-sm btn btn-success m-2"
+                  onClick={handleSubmit}>
+                  Submit
+                </button>
+              </div>
+            </div>
+            {nomList.map((movie, index) => (
+              <Nom
+                key={index}
+                removeBtn={handleRemove}
+                index={index}
+                title={movie.Title}
+                year={movie.Year}
+                imdb={movie.imdbID}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <Submitted
-        nomList={nomList}
-        submit={submit}
-        reset={handleReset}
-        className="m-2"
-      />
-      <div>
-        {nomList.map((movie, index) => (
-          <Nom
-            key={index}
-            removeBtn={handleRemove}
-            index={index}
-            title={movie.Title}
-            year={movie.Year}
-            imdb={movie.imdbID}
-          />
-        ))}
-      </div>
+
+      <Submitted nomList={nomList} submit={submit} reset={handleReset} />
     </div>
   );
 };
