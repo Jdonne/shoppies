@@ -1,7 +1,7 @@
 # Shoppies
 
 This is a submission to the UX Developer Intern & Web Developer Intern Challenge - (Summer 2021) at Shopify.\
-It allow the user to save their favourite films they feel should be up for nomination from the OMDB API(http://www.omdbapi.com/). When they've selected 5 nominees they should be notified they're finished.\
+It allows the user to save their favourite films they feel should be up for nomination from the OMDB API(http://www.omdbapi.com/). When 5 nominees have been selected they will be notified they're finished.\
 Application is hosted and can be visited at http://jdonne.github.io/shoppies
 
 ## Functionalities Include:

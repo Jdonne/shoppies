@@ -56,7 +56,7 @@ const App = () => {
     async function apiFetch() {
       try {
         const movieAPI = await fetch(
-          "https://www.omdbapi.com/?apikey=2be7a6b9&s=" + search
+          "https://www.omdbapi.com/?apikey=2be7a6b9&s=" + search + "&type=movie"
         );
         movieData = await movieAPI.json();
         if (movieData.Response !== "False") {
