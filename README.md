@@ -1,3 +1,21 @@
+# Shoppies
+
+This is a submission to the UX Developer Intern & Web Developer Intern Challenge - (Summer 2021) at Shopify.\
+It allow the user to save their favourite films they feel should be up for nomination from the OMDB API(http://www.omdbapi.com/). When they've selected 5 nominees they should be notified they're finished.\
+Application is hosted and can be visited at http://jdonne.github.io/shoppies
+
+## Functionalities Include:
+
+Search OMDB and display the results (movies only)\
+Add a movie from the search results to our nomination list\
+View the list of films already nominated\
+Remove a nominee from the nomination list\
+Each movie title will link to the corresponding imDB page
+
+## More Info:
+
+More information can be found at https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
