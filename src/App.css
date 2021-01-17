@@ -41,6 +41,7 @@
 
 .mainApp {
   background-image: url("./components/imgs/background.jpg");
+  background-size: cover;
   min-height: 100vh !important;
 }
 h4 {
